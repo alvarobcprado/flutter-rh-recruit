@@ -64,15 +64,8 @@ class _SplashState extends State<Splash> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      radius: 75,
-                      backgroundColor: Colors.white,
-                      child: ClipRRect(
-                        child: Image.asset(
-                          "assets/logo2.png",
-                        ),
-                        borderRadius: BorderRadius.circular(100),
-                      ),
+                    Image.asset(
+                      "assets/logo2.png",
                     ),
                     SizedBox(height: 38),
                     Text(
