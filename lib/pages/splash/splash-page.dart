@@ -45,12 +45,7 @@ class _SplashState extends State<Splash> {
         // Diminui a velocidade das animações/transições
         timeDilation = 6.0;
         // Desativa a página da splash e coloca a Home no lugar
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomePage(),
-          ),
-        );
+        Navigator.pushReplacementNamed(context, '/home');
       },
     );
     return Scaffold(
