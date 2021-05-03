@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:rhrecruit/core/core.dart';
 import 'package:rhrecruit/data/candidate-data.dart';
@@ -14,9 +16,14 @@ class _CandidatesPageState extends State<CandidatesPage> {
   final candidates = List<Candidate>.generate(
     20,
     (index) {
+      int randomAge = Random().nextInt(47) + 18;
       return Candidate(
         name: 'Canditado ${index + 1}',
+        age: randomAge,
+        qualification: 'Engenheiro',
         id: index + 1,
+        presence: false,
+        interviewed: false,
       );
     },
   );
