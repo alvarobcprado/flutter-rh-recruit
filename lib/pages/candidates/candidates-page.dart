@@ -31,9 +31,11 @@ class _CandidatesPageState extends State<CandidatesPage> {
   /// Navega para página de assinatura e aguarda o retorno da página
   /// para verificar se o candidato não deixou a tela em branco
   Future<void> _buildSignature(context, Candidate candidate) async {
-    var result = await Navigator.pushNamed(context, '/signature');
+    var result =
+        await Navigator.pushNamed(context, '/signature', arguments: candidate);
     if (result != null) {
       setState(() {
+        candidate.signatureImage = result;
         candidate.changePresence = true;
       });
     }
