@@ -74,9 +74,7 @@ class _CandidatesPageState extends State<CandidatesPage> {
                     candidates[index].name,
                     style: AppTextStyles.listItens,
                   ),
-                  leading: CircleAvatar(
-                    child: Icon(Icons.person),
-                  ),
+                  leading: candidates[index].avatar,
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -87,7 +85,12 @@ class _CandidatesPageState extends State<CandidatesPage> {
                             : Colors.grey,
                       ),
                       SizedBox(width: 10),
-                      Icon(Icons.assignment),
+                      Icon(
+                        Icons.assignment,
+                        color: candidates[index].interviewed
+                            ? candidates[index].result
+                            : Colors.grey,
+                      ),
                     ],
                   ),
                   onTap: () {
