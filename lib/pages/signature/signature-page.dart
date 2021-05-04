@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rhrecruit/core/core.dart';
+import 'package:rhrecruit/data/candidate-data.dart';
 import 'package:rhrecruit/pages/signature/widgets/signature-widgets.dart';
 import 'package:signature/signature.dart';
 
@@ -18,6 +19,9 @@ class _SignaturePageState extends State<SignaturePage> {
 
   @override
   Widget build(BuildContext context) {
+    Candidate candidate =
+        ModalRoute.of(context).settings.arguments as Candidate;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
