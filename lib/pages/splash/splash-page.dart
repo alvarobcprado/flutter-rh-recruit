@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rhrecruit/pages/home/home-page.dart';
 import 'package:rhrecruit/pages/splash/widgets/splash-widgets.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 

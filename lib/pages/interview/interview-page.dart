@@ -8,12 +8,15 @@ class InterviewPage extends StatefulWidget {
   _InterviewPageState createState() => _InterviewPageState();
 }
 
+///Captura os dados do candidato escolhido e
+///constrói a tela de entrevista
 class _InterviewPageState extends State<InterviewPage> {
   @override
   Widget build(BuildContext context) {
     Candidate candidate =
         ModalRoute.of(context).settings.arguments as Candidate;
 
+    ///Adiciona os pontos da falta cometida e atualiza a tela
     void changePointColor(int point) {
       setState(() {
         candidate.addPoint(point);

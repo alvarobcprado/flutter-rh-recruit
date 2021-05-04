@@ -17,6 +17,8 @@ class _SignaturePageState extends State<SignaturePage> {
     exportBackgroundColor: Colors.transparent,
   );
 
+  ///Captura os argumentos enviados da tela anterior
+  ///e constrói a visualização da área de assinatura
   @override
   Widget build(BuildContext context) {
     Candidate candidate =

@@ -41,7 +41,9 @@ class _CandidatesPageState extends State<CandidatesPage> {
     }
   }
 
-  /// Navega para a página de entrevista
+  /// Navega para a página de entrevista e aguarda
+  /// o resultado da entrevista, se true, a entrevista
+  /// foi finalizada e a tela é atualizada.
   void _doInterview(context, Candidate candidate) async {
     var result = await Navigator.pushNamed(
       context,
@@ -53,6 +55,7 @@ class _CandidatesPageState extends State<CandidatesPage> {
     }
   }
 
+  /// Constrói uma visualização da lista de candidatos
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +72,6 @@ class _CandidatesPageState extends State<CandidatesPage> {
             ),
           ]),
       body: SafeArea(
-        /// Constrói uma visualização da lista de candidatos
         child: ListView.builder(
           itemCount: candidates.length,
           itemBuilder: (context, index) {
