@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rhrecruit/core/app-text-styles.dart';
+import 'package:rhrecruit/data/candidate-data.dart';
 import 'package:rhrecruit/pages/interview/widgets/interview-widgets.dart';
 
 class InterviewPage extends StatefulWidget {
@@ -10,6 +11,9 @@ class InterviewPage extends StatefulWidget {
 class _InterviewPageState extends State<InterviewPage> {
   @override
   Widget build(BuildContext context) {
+    Candidate candidate =
+        ModalRoute.of(context).settings.arguments as Candidate;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
