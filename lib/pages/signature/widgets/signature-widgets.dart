@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:rhrecruit/core/core.dart';
+import 'package:rhrecruit/data/candidate-data.dart';
 import 'package:signature/signature.dart';
 
-Widget buildSignatureCandidateInfo() {
+Widget buildSignatureCandidateInfo(Candidate candidate) {
   return Row(
     children: [
-      CircleAvatar(
-        child: Icon(Icons.person),
-      ),
+      candidate.avatar,
       SizedBox(width: 10),
       Text(
-        "Candidato XX",
+        candidate.name,
         style: AppTextStyles.heading17,
       ),
     ],

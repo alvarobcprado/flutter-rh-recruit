@@ -35,7 +35,7 @@ class _SignaturePageState extends State<SignaturePage> {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
-              buildSignatureCandidateInfo(),
+              buildSignatureCandidateInfo(candidate),
               SizedBox(height: 10),
               buildSignatureField(context, _controller),
               buildSignatureBtn(context, _controller),
