@@ -18,6 +18,21 @@ Widget buildCandidateInfo(Candidate candidate) {
       candidate.name,
       style: AppTextStyles.heading15,
     ),
+    trailing: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(
+          Icons.circle,
+          color: colorPoint[candidate.points],
+          size: 40,
+        ),
+        SizedBox(width: 20),
+        Text(
+          '${candidate.points} Pontos',
+          style: AppTextStyles.heading15,
+        ),
+      ],
+    ),
   );
 }
 
