@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:rhrecruit/core/core.dart';
 import 'package:rhrecruit/data/candidate-data.dart';
 
+List<Color> colorPoint = [
+  Colors.green,
+  Colors.yellow[200],
+  Colors.orange[300],
+  Colors.orange[600],
+  Colors.red
+];
+
 Widget buildCandidateInfo(Candidate candidate) {
   return ListTile(
     contentPadding: EdgeInsets.zero,
