@@ -42,8 +42,15 @@ class _CandidatesPageState extends State<CandidatesPage> {
   }
 
   /// Navega para a página de entrevista
-  void _doInterview(context) {
-    Navigator.pushNamed(context, '/interview');
+  void _doInterview(context, Candidate candidate) async {
+    var result = await Navigator.pushNamed(
+      context,
+      '/interview',
+      arguments: candidate,
+    );
+    if (result == true) {
+      setState(() {});
+    }
   }
 
   @override
@@ -95,7 +102,7 @@ class _CandidatesPageState extends State<CandidatesPage> {
                   ),
                   onTap: () {
                     if (candidates[index].presence) {
-                      _doInterview(context);
+                      _doInterview(context, candidates[index]);
                     } else {
                       _buildSignature(context, candidates[index]);
                     }
