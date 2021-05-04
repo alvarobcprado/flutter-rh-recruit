@@ -14,6 +14,12 @@ class _InterviewPageState extends State<InterviewPage> {
     Candidate candidate =
         ModalRoute.of(context).settings.arguments as Candidate;
 
+    void changePointColor(int point) {
+      setState(() {
+        candidate.addPoint(point);
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -33,7 +39,7 @@ class _InterviewPageState extends State<InterviewPage> {
             SizedBox(height: 20),
             buildFaultText(),
             SizedBox(height: 20),
-            buildFaultsBtn(context),
+            buildFaultsBtn(context, changePointColor),
             SizedBox(height: 20),
             buildFinishBtn(context, candidate)
           ],

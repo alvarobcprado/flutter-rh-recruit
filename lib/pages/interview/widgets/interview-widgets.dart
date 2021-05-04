@@ -53,9 +53,9 @@ Widget buildFaultText() {
   );
 }
 
-Widget buildChip(BuildContext context, int point, String label) {
+Widget buildChip(BuildContext context, Function func, int point, String label) {
   return ActionChip(
-    onPressed: () {},
+    onPressed: () => func(point),
     avatar: CircleAvatar(
       child: Text(
         '-$point',
@@ -73,15 +73,15 @@ Widget buildChip(BuildContext context, int point, String label) {
   );
 }
 
-Widget buildFaultsBtn(BuildContext context) {
+Widget buildFaultsBtn(BuildContext context, Function changePointColor) {
   return Wrap(
     spacing: 10,
     alignment: WrapAlignment.center,
     children: [
-      buildChip(context, 1, 'Leve'),
-      buildChip(context, 2, 'Média'),
-      buildChip(context, 3, 'Grave'),
-      buildChip(context, 4, 'Eliminatória'),
+      buildChip(context, changePointColor, 1, 'Leve'),
+      buildChip(context, changePointColor, 2, 'Média'),
+      buildChip(context, changePointColor, 3, 'Grave'),
+      buildChip(context, changePointColor, 4, 'Eliminatória'),
     ],
   );
 }
