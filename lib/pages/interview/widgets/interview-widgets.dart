@@ -1,35 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:rhrecruit/core/core.dart';
+import 'package:rhrecruit/data/candidate-data.dart';
 
-Widget buildCandidateInfo() {
+Widget buildCandidateInfo(Candidate candidate) {
   return ListTile(
     contentPadding: EdgeInsets.zero,
-    leading: CircleAvatar(
-      child: Icon(Icons.person),
-    ),
+    leading: candidate.avatar,
     title: Text(
-      "Candidato XX",
+      candidate.name,
       style: AppTextStyles.heading15,
-    ),
-    trailing: Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(
-          Icons.circle,
-          color: Colors.green,
-          size: 40,
-        ),
-        SizedBox(width: 20),
-        Text(
-          '0 Pontos',
-          style: AppTextStyles.heading15,
-        ),
-      ],
     ),
   );
 }
 
-Widget buildCandidatePresentation() {
+Widget buildCandidatePresentation(Candidate candidate) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -39,12 +23,12 @@ Widget buildCandidatePresentation() {
       ),
       SizedBox(height: 10),
       Text(
-        'XX Anos  • Formado em X',
+        '${candidate.age} Anos  • ${candidate.qualification}',
         style: AppTextStyles.bodyLightGrey,
       ),
       SizedBox(height: 10),
       Text(
-        "'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        '${candidate.presentation}',
         style: AppTextStyles.body,
       ),
     ],
@@ -94,7 +78,7 @@ Widget buildFaultsBtn(BuildContext context) {
   );
 }
 
-Widget buildFinishBtn(BuildContext context) {
+Widget buildFinishBtn(BuildContext context, Candidate candidate) {
   return Container(
     width: double.infinity,
     height: 45,
@@ -115,7 +99,8 @@ Widget buildFinishBtn(BuildContext context) {
         ),
       ),
       onPressed: () {
-        Navigator.pop(context);
+        candidate.changeInterviewed = true;
+        Navigator.pop(context, true);
       },
       child: Text(
         'Finalizar entrevista',

@@ -27,15 +27,15 @@ class _InterviewPageState extends State<InterviewPage> {
           padding: EdgeInsets.symmetric(horizontal: 24),
           children: <Widget>[
             SizedBox(height: 10),
-            buildCandidateInfo(),
+            buildCandidateInfo(candidate),
             SizedBox(height: 20),
-            buildCandidatePresentation(),
+            buildCandidatePresentation(candidate),
             SizedBox(height: 20),
             buildFaultText(),
             SizedBox(height: 20),
             buildFaultsBtn(context),
             SizedBox(height: 20),
-            buildFinishBtn(context)
+            buildFinishBtn(context, candidate)
           ],
         ),
       ),
