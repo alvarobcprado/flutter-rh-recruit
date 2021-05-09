@@ -55,6 +55,30 @@ class _CandidatesPageState extends State<CandidatesPage> {
     }
   }
 
+  Future<void> _showSignature(context, Candidate candidate) {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Assinatura de ${candidate.name}',
+              style: AppTextStyles.heading17),
+          content: Container(
+            child: Image.memory(candidate.signature),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Fechar'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   /// Constrói uma visualização da lista de candidatos
   @override
   Widget build(BuildContext context) {
@@ -79,36 +103,44 @@ class _CandidatesPageState extends State<CandidatesPage> {
               alignment: Alignment.center,
               height: 75,
               child: ListTile(
-                  title: Text(
-                    candidates[index].name,
-                    style: AppTextStyles.listItens,
-                  ),
-                  leading: candidates[index].avatar,
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.border_color,
-                        color: candidates[index].presence
-                            ? Colors.green
-                            : Colors.grey,
-                      ),
-                      SizedBox(width: 10),
-                      Icon(
-                        Icons.assignment,
-                        color: candidates[index].interviewed
-                            ? candidates[index].result
-                            : Colors.grey,
-                      ),
-                    ],
-                  ),
-                  onTap: () {
-                    if (candidates[index].presence) {
-                      _doInterview(context, candidates[index]);
-                    } else {
-                      _buildSignature(context, candidates[index]);
-                    }
-                  }),
+                title: Text(
+                  candidates[index].name,
+                  style: AppTextStyles.listItens,
+                ),
+                leading: candidates[index].avatar,
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.border_color,
+                      color: candidates[index].presence
+                          ? Colors.green
+                          : Colors.grey,
+                    ),
+                    SizedBox(width: 10),
+                    Icon(
+                      Icons.assignment,
+                      color: candidates[index].interviewed
+                          ? candidates[index].result
+                          : Colors.grey,
+                    ),
+                  ],
+                ),
+                onTap: () {
+                  if (candidates[index].presence) {
+                    _doInterview(context, candidates[index]);
+                  } else {
+                    _buildSignature(context, candidates[index]);
+                  }
+                },
+                onLongPress: () {
+                  if (candidates[index].presence) {
+                    _showSignature(context, candidates[index]);
+                  } else {
+                    _buildSignature(context, candidates[index]);
+                  }
+                },
+              ),
             );
           },
         ),
