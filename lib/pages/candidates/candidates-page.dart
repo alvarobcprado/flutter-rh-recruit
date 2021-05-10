@@ -97,12 +97,14 @@ class _CandidatesPageState extends State<CandidatesPage> {
           ]),
       body: SafeArea(
         child: ListView.builder(
+          padding: EdgeInsets.symmetric(horizontal: 20),
           itemCount: candidates.length,
           itemBuilder: (context, index) {
             return Container(
               alignment: Alignment.center,
               height: 75,
               child: ListTile(
+                contentPadding: EdgeInsets.zero,
                 title: Text(
                   candidates[index].name,
                   style: AppTextStyles.listItens,
@@ -113,6 +115,7 @@ class _CandidatesPageState extends State<CandidatesPage> {
                   children: [
                     Icon(
                       Icons.border_color,
+                      size: 20,
                       color: candidates[index].presence
                           ? Colors.green
                           : Colors.grey,
@@ -120,6 +123,7 @@ class _CandidatesPageState extends State<CandidatesPage> {
                     SizedBox(width: 10),
                     Icon(
                       Icons.assignment,
+                      size: 20,
                       color: candidates[index].interviewed
                           ? candidates[index].result
                           : Colors.grey,

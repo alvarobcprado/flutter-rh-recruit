@@ -91,6 +91,7 @@ Widget buildChip(BuildContext context, Function func, int point, String label) {
 Widget buildFaultsBtn(BuildContext context, Function changePointColor) {
   return Wrap(
     spacing: 10,
+    runSpacing: 10,
     alignment: WrapAlignment.center,
     children: [
       buildChip(context, changePointColor, 1, 'Leve'),

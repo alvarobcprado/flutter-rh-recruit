@@ -33,7 +33,7 @@ class _InterviewPageState extends State<InterviewPage> {
       ),
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           children: <Widget>[
             SizedBox(height: 10),
             buildCandidateInfo(candidate),

@@ -15,25 +15,25 @@ class AppTextStyles {
     color: Colors.white,
   );
 
-  static final TextStyle listItens = GoogleFonts.playfairDisplay(
+  static final TextStyle listItens = GoogleFonts.roboto(
     fontWeight: FontWeight.w400,
     fontSize: 18,
     color: Colors.black,
   );
 
-  static final TextStyle buttom = GoogleFonts.inter(
+  static final TextStyle buttom = GoogleFonts.roboto(
     fontWeight: FontWeight.w500,
-    fontSize: 18,
+    fontSize: 16,
     color: AppColors.white,
   );
 
-  static final TextStyle faults = GoogleFonts.inter(
+  static final TextStyle faults = GoogleFonts.roboto(
     fontWeight: FontWeight.bold,
     fontSize: 12,
     color: Colors.white,
   );
 
-  static final TextStyle faultsNumber = GoogleFonts.inter(
+  static final TextStyle faultsNumber = GoogleFonts.roboto(
     fontWeight: FontWeight.bold,
     fontSize: 17,
     color: AppColors.primary,
@@ -45,43 +45,43 @@ class AppTextStyles {
     color: AppColors.lightGrey,
   );
 
-  static final TextStyle heading = GoogleFonts.inter(
+  static final TextStyle heading = GoogleFonts.roboto(
     fontWeight: FontWeight.w500,
     fontSize: 20,
     color: AppColors.primary,
   );
 
-  static final TextStyle heading15 = GoogleFonts.inter(
+  static final TextStyle heading15 = GoogleFonts.roboto(
     fontWeight: FontWeight.w700,
     fontSize: 15,
     color: AppColors.primary,
   );
 
-  static final TextStyle heading17 = GoogleFonts.inter(
+  static final TextStyle heading17 = GoogleFonts.roboto(
     fontWeight: FontWeight.w700,
     fontSize: 18,
     color: AppColors.primary,
   );
 
-  static final TextStyle heading22 = GoogleFonts.inter(
+  static final TextStyle heading22 = GoogleFonts.roboto(
     fontWeight: FontWeight.w700,
     fontSize: 22,
     color: AppColors.primary,
   );
 
-  static final TextStyle body = GoogleFonts.inter(
+  static final TextStyle body = GoogleFonts.roboto(
     fontWeight: FontWeight.w500,
     fontSize: 15,
     color: AppColors.grey,
   );
 
-  static final TextStyle bodyLightGrey = GoogleFonts.inter(
+  static final TextStyle bodyLightGrey = GoogleFonts.roboto(
     fontWeight: FontWeight.w500,
     fontSize: 15,
     color: AppColors.lightGrey,
   );
 
-  static final TextStyle bodyLightPrimary = GoogleFonts.inter(
+  static final TextStyle bodyLightPrimary = GoogleFonts.roboto(
     fontWeight: FontWeight.w500,
     fontSize: 15,
     color: AppColors.primaryLight,

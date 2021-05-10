@@ -34,7 +34,7 @@ class _SignaturePageState extends State<SignaturePage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
           child: Column(
             children: [
               buildSignatureCandidateInfo(candidate),
