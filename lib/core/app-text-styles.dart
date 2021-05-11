@@ -3,6 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app-colors.dart';
 
 class AppTextStyles {
+  static final TextStyle splashLogo = GoogleFonts.righteous(
+    color: Colors.white,
+    fontSize: 48,
+    fontWeight: FontWeight.w400,
+  );
+
   static final TextStyle title = GoogleFonts.roboto(
     fontWeight: FontWeight.w700,
     fontSize: 18,

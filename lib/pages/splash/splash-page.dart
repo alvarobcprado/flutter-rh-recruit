@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:rhrecruit/core/app-text-styles.dart';
 import 'package:rhrecruit/pages/splash/widgets/splash-widgets.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
@@ -64,10 +64,7 @@ class _SplashState extends State<Splash> {
                     SizedBox(height: 38),
                     Text(
                       "Kenoby",
-                      style: GoogleFonts.righteous(
-                          color: Colors.white,
-                          fontSize: 48,
-                          fontWeight: FontWeight.w400),
+                      style: AppTextStyles.splashLogo,
                     ),
                   ],
                 ),
