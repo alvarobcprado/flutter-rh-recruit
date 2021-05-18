@@ -73,7 +73,7 @@ Widget buildChip(BuildContext context, Function func, int point, String label) {
     onPressed: () => func(point),
     avatar: CircleAvatar(
       child: Text(
-        '-$point',
+        '$point',
         style: AppTextStyles.faultsNumber,
       ),
       backgroundColor: Colors.white,
